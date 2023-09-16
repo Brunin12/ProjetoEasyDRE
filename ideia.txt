@@ -1,0 +1,41 @@
+----------------------------------------------------------
+                      = IDEIA EASYDRE =
+
+- Como Funciona:
+  Uma pessoa entra no site e é recebida pela página inicial, que explica as funcionalidades do site e como utilizá-las. Ao tentar executar uma ação, um pop-up de login é exibido e o usuário deve tomar uma decisão:
+
+  1 - Já tenho uma conta
+    | -  1.1 - Sou usuário
+    | -  1.2 - Sou empresa
+
+  2 - Criar uma conta
+    | - 2.1 - Para empresas
+    | - 2.2 - Para usuários
+
+  Após o login, o usuário terá acesso ao dashboard com o "Soft UI Dashboard", que inicialmente será apenas um esqueleto da página e posteriormente será carregado com informações. Ao clicar em editar, o usuário poderá adicionar informações e gerar um resumo e um arquivo DRE em formato txt/pdf (ainda a ser decidido).
+
+- DRE (Demonstração do Resultado do Exercício):
+
+  1. Receita Operacional: Representa a receita total gerada durante o período.
+
+  2. Custos das Vendas ou Serviços: Engloba os custos associados à produção de bens ou à prestação de serviços, incluindo matéria-prima, mão de obra e outros custos.
+
+  3. Margem Bruta: É a diferença entre a receita operacional e os custos das vendas ou serviços.
+
+  4. Despesas Operacionais: Compreendem as despesas relacionadas às operações diárias da empresa, como salários administrativos, aluguel, utilitários, marketing e despesas gerais.
+
+  5. Lucro Operacional: Corresponde à diferença entre a margem bruta e as despesas operacionais, representando o lucro obtido pela empresa.
+
+  6. Receita e Despesas não Operacionais: Incluem qualquer receita ou despesa que não esteja diretamente ligada às operações principais da empresa, como juros de investimentos ou empréstimos.
+
+  7. Lucro Antes dos Impostos (LAIR): É o resultado do lucro operacional somado às receitas não operacionais e subtraído das despesas não operacionais.
+
+  8. Impostos sobre o Lucro: Representa o valor dos impostos a serem pagos sobre o lucro antes dos impostos.
+
+  9. Lucro Líquido: É o lucro após o pagamento de impostos sobre o lucro, representando o lucro final da empresa.
+
+  10. Dividendos: Refere-se a qualquer pagamento de dividendos aos acionistas, se aplicável.
+
+  11. Lucro por Ação (LPA): Calculado dividindo o lucro líquido pelo número de ações em circulação. É um indicador importante para investidores.
+
+  12. Outras Informações Suplementares: Dependendo das necessidades da empresa e das regulamentações locais, a DRE também pode incluir informações adicionais, como ganhos ou perdas extraordinárias, ajustes contábeis, etc.
