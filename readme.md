@@ -59,9 +59,7 @@ O EasyDRE é uma plataforma que oferece soluções para a elaboração e anális
 5. Crie um Pull Request.
 
 ## Equipe
-
-- Nome do Colaborador 1
-- Nome do Colaborador 2
+- Bruno Parreira
 
 ## Licença
 
