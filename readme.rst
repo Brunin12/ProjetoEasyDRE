@@ -1,71 +1,45 @@
-###################
-What is CodeIgniter
-###################
+.. EasyDRE
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+EasyDRE é uma aplicação web para auxiliar na análise e gestão financeira de empresas, fornecendo uma variedade de ferramentas e recursos para simplificar o processo de elaboração do Demonstrativo de Resultados do Exercício (DRE).
 
-*******************
-Release Information
-*******************
+.. Conteúdo
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+- **Recursos Principais**
+  - Cadastro e Gestão de Empresas
+  - Análise e Dashboard Financeiro
+  - Elaboração do Demonstrativo de Resultados (DRE)
+  - Perfil de Usuário Personalizado
 
-**************************
-Changelog and New Features
-**************************
+- **Como Começar**
+  - [Link para o site EasyDRE](https://www.easydre.com)
+  - Crie uma conta ou faça login se já possui uma
+  - Cadastre sua empresa e comece a utilizar as funcionalidades disponíveis
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+- **Requisitos de Instalação**
+  - Navegador web moderno (Chrome, Firefox, Safari, etc.)
 
-*******************
-Server Requirements
-*******************
+- **Contribuição**
+  - Se você gostaria de contribuir para o desenvolvimento do EasyDRE, sinta-se à vontade para enviar pull requests ou relatar problemas em nosso [repositório no GitHub](https://github.com/seu-usuario/easydre)
 
-PHP version 5.6 or newer is recommended.
+- **Licença**
+  - Este projeto está licenciado sob a Licença MIT - veja o arquivo `LICENSE` para detalhes
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+.. Capturas de Tela
 
-************
-Installation
-************
+- ![Tela de Login](/screenshots/tela-login.png)
+- ![Dashboard Financeiro](/screenshots/dashboard-financeiro.png)
+- ![Elaboração do DRE](/screenshots/elaboracao-dre.png)
 
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
+.. Sobre
 
-*******
-License
-*******
+EasyDRE foi desenvolvido para facilitar o processo de análise financeira para empresas de todos os tamanhos. Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato conosco em [contato@easydre.com](mailto:contato@easydre.com).
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+.. Autor
 
-*********
-Resources
-*********
+Nome do Autor
+Email do Autor: autor@example.com
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+.. Agradecimentos
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+Agradecemos a todos os contribuidores que ajudaram a tornar o EasyDRE uma realidade.
 
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
