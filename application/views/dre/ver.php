@@ -74,7 +74,7 @@
           </table>
           <hr>
           <div class="d-flex justify-content-center"> <!-- Adicionado o container flex -->
-                <a href="<?= base_url('criar/dados_dre') ?>" class="btn btn-info w-75">Download .PDF</a>
+                <a href="<?= base_url('criar/dre_pdf') ?>" class="btn btn-info w-75">Download .PDF</a>
           </div>
         </div>
       </div>

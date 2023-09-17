@@ -29,7 +29,7 @@
       <div class="card-footer text-center pt-0 px-lg-2 px-1">
         <p class="mb-4 text-sm mx-auto">
           Não tem uma conta?
-          <a href="javascript:;" class="text-info text-gradient font-weight-bold">Criar uma conta</a>
+          <a href="<?= base_url('conta/criar') ?>" class="text-info text-gradient font-weight-bold">Criar uma conta</a>
         </p>
       </div>
     </div>

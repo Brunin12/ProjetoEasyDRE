@@ -62,7 +62,7 @@
                 </div>
               </div>
               <div class="card-body">
-                <form role="form text-left" action="<?= base_url('contas/criar') ?>" method="post">
+                <form role="form text-left" action="<?= base_url('conta/criar') ?>" method="post">
                   <div class="mb-3">
                     <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" name="nome" aria-describedby="email-addon">
                   </div>
@@ -76,7 +76,7 @@
                   <div class="text-center">
                     <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Cadastrar Conta</button>
                   </div>
-                  <p class="text-sm mt-3 mb-0">Já tem conta? <a href="javascript:;" class="text-dark font-weight-bolder">Entrar</a></p>
+                  <p class="text-sm mt-3 mb-0">Já tem conta? <a href="<?= base_url('conta/entrar') ?>" class="text-dark font-weight-bolder">Entrar</a></p>
                 </form>
               </div>
             </div>

@@ -18,7 +18,7 @@ class Auth_model extends CI_Model
     }
 
     // Se o usuário não estiver autenticado, redireciona para a página de acessos
-    if (!isset($user) && ! $logado) {
+    if (!isset($user) && !$logado) {
       $this->session_m->set_flashdata('msg', 'Você saiu da sua conta!');
       redirect(base_url('conta/entrar'));
     } else {
@@ -56,21 +56,35 @@ class Auth_model extends CI_Model
     }
   }
 
-  public function existe_dre() {
-    $id_empresa = $this->session_m->userdata('empresa')['id_empresa'];
-    $empresa = $this->empresa->get_empresa_id($id_empresa);
-    $saldo = $empresa->saldo;
-    $lucro = $empresa->lucro_liquido;
-    $despesa = $empresa->despesa;
-    $receita = $empresa->receita;
-    if (isset($id_empresa, $empresa, $saldo, $lucro, $despesa, $receita)) {
-      // Todas as variáveis estão definidas
-      return true;
-    } else {
-      // Pelo menos uma das variáveis não está definida
-      return false;
+  public function existe_empresa()
+  {
+    $id_empresa = $this->session_m->userdata('empresa');
+    if (isset($id_empresa)) {
+      $empresa = $this->empresa->get_empresa_id($id_empresa['id_empresa']);
+      if (isset($empresa)) {
+        return true;
+      }
     }
+    return false;
 
+  }
+
+  public function existe_dre()
+  {
+    $id_empresa = $this->session_m->userdata('empresa');
+    if (isset($id_empresa)) {
+      $empresa = $this->empresa->get_empresa_id($id_empresa['id_empresa']);
+      if (isset($empresa)) {
+        $saldo = $empresa->saldo;
+        $lucro = $empresa->lucro_liquido;
+        $despesa = $empresa->despesa;
+        $receita = $empresa->receita;
+        if (isset($id_empresa, $empresa, $saldo, $lucro, $despesa, $receita))
+          // Todas as variáveis estão definidas
+          return true;
+      }
+    }
+    return false;
   }
 
 }
