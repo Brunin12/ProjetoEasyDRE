@@ -63,8 +63,10 @@ class Usuario_model extends CI_Model
     $linhas_afetadas = $this->db->affected_rows();
     if ($linhas_afetadas > 0 && $data->flag == 'ATIVO') {
       $this->session_m->set_flashdata("msg", "Entrou com Sucesso");
+      return $data;
     } else {
       $this->session_m->set_flashdata("error", "Nenhum usuário ativo foi encontrado.");
+      redirect(base_url('conta/entrar'));
     }
   }
 

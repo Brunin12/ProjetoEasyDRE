@@ -83,19 +83,20 @@ class Conta extends CI_Controller
 
       $form = ['email' => $email, 'senha' => $senha];
       $data = $this->usuario->login($form);
-      $usuario = $this->usuario->get_usuario($form);
       $user = array(
-        'nome' => $usuario->nome,
-        'id' => $usuario->id
+        'nome' => $data->nome,
+        'id' => $data->id_usuario
       );
       $this->session_m->set_userdata('user', $user);
-      $empresa_id = $usuario->id_empresa;
-      $empresa = array(
-        'nome' => $data['nome'],
-        'cpf-cnpj' => $data['cpf-cnpj'],
-        'id_empresa' => $empresa_id
-      );
-      $this->session_m->set_userdata('empresa', $empresa);
+      $empresa_id = $data->id_empresa;
+      if (isset($empresa_id)) {
+        $empresa = array(
+          'nome' => $data->nome,
+          'cpf_cnpj' => $data->cpf_cnpj,
+          'id_empresa' => $empresa_id
+        );
+        $this->session_m->set_userdata('empresa', $empresa);
+      }
       $this->session_m->set_userdata('user', $user);
       redirect(base_url());
     } else {

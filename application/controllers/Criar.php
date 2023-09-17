@@ -19,7 +19,7 @@ class Criar extends CI_Controller
   }
   public function empresa()
   {
-    $this->form_validation->set_rules('nome', 'E-Mail', 'trim|required');
+    $this->form_validation->set_rules('nome', 'Nome', 'trim|required');
     $this->form_validation->set_rules('cpf-cnpj', 'cpf-CNPJ', 'trim|required');
     if ($this->form_validation->run() == FALSE) {
       if ($_REQUEST == "POST") {
@@ -33,19 +33,22 @@ class Criar extends CI_Controller
       $this->load->view('default/template', array('page' => $this->page));
     } else {
       $nome = $this->get_input('nome');
-      $cpfcnpj = $this->get_input('cpf-cnpj');
+      $cpfcnpj = $this->get_input('cpf_cnpj');
       $data = array(
         'nome' => $nome,
-        'cpf-cnpj' => $cpfcnpj,
+        'cpf_cnpj' => $cpfcnpj,
         'flag' => "ATIVO"
       );
+
       $id = $this->empresa->inserir($data);
       $this->usuario->atualiza(['id_empresa' => $id]);
+
       $empresa = array(
         'nome' => $data['nome'],
-        'cpf-cnpj' => $data['cpf-cnpj'],
+        'cpf_cnpj' => $data['cpf_cnpj'],
         'id_empresa' => $id
       );
+
       $this->session_m->set_userdata('empresa', $empresa);
       $this->session_m->set_flashdata('msg', 'Empresa Cadastrada!');
       redirect(base_url());
@@ -55,23 +58,34 @@ class Criar extends CI_Controller
   public function dre()
   {
     $this->form_validation->set_rules('saldo', 'Saldo', 'trim|required');
-    $this->form_validation->set_rules('lucro_liquido', 'Lucro Liquido', 'trim|required');
     $this->form_validation->set_rules('despesa', 'Despesa', 'trim|required');
-    $this->form_validation->set_rules('receita', 'Receita', 'trim|required');
+    $this->form_validation->set_rules('receita', 'Receita Total', 'trim|required');
+    $this->form_validation->set_rules('investimento', 'Investimento', 'trim|required');
     if ($this->form_validation->run() == FALSE) {
       $this->session_m->set_flashdata('error', validation_errors());
-      redirect(base_url('conta/empresa'));
+      redirect(base_url('criar/dados_dre'));
     } else {
+      $despesa = $this->get_input('despesa');
+      $receita = $this->get_input('receita');
+      $investimento = $this->get_input('investimento');
+      $saldo = $this->get_input('saldo');
+      $lucro_liquido = $receita - ($despesa + $investimento);
       $dados = array(
-        'saldo' => $this->get_input('saldo'),
-        'lucro_liquido' => $this->get_input('lucro_liquido'),
-        'despesa' => $this->get_input('despesa'),
-        'receita' => $this->get_input('receita')
+        'lucro_liquido' => $lucro_liquido,
+        'receita' => $receita,
+        'despesa' => $despesa,
+        'investimento' => $investimento,
+        'saldo' => $saldo,
       );
       $id_empresa = $this->session_m->userdata('empresa')['id_empresa'];
       $this->empresa->atualiza($dados, array('id_empresa' => $id_empresa));
       $empresa = $this->empresa->get_empresa($dados);
       $dre = $this->empresa->gerar_dre($empresa);
+      $dre['margem_lucro'] =
+        (($empresa->receita / $empresa->lucro_liquido) * 100);
+      $dre['roi'] =
+        (($empresa->investimento / $empresa->lucro_liquido) * 100);
+
       $dre_existe = $this->auth->existe_dre();
       if (!$dre_existe) {
         redirect(base_url('visualizar/dre'));
@@ -90,9 +104,6 @@ class Criar extends CI_Controller
    */
   public function dados_dre()
   {
-    $id_empresa = $this->session_m->userdata('empresa')['id_empresa'];
-    $empresa = $this->empresa->get_empresa_id($id_empresa);
-    $this->page['dre'] = $this->empresa->gerar_dre($empresa);
     $this->page['titulo'] = "Criando DRE";
     $this->page['content'] = $this->load->view("dre/index", $this->data, true);
     $this->load->view('default/template', array('page' => $this->page));

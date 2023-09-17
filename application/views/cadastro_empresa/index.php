@@ -21,7 +21,7 @@
                     <input type="text" class="form-control" placeholder="Nome da Empresa" aria-label="Nome" name="nome" aria-describedby="name-addon">
                   </div>
                   <div class="mb-3">
-                    <input type="text" class="form-control cnpj" placeholder="CPF/CNPJ da Empresa" id="cnpj" aria-label="CPF/CNPJ" name="cpf-cnpj" aria-describedby="cpf-cnpj-addon">
+                    <input type="text" class="form-control cnpj" placeholder="CPF/CNPJ da Empresa" id="cnpj" aria-label="CPF/CNPJ" name="cpf_cnpj" aria-describedby="cpf-cnpj-addon">
                   </div>
                   <div class="text-center">
                     <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Cadastrar Empresa</button>

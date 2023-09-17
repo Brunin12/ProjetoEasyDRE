@@ -2,7 +2,7 @@
   <div class="col-12">
     <div class="card mb-4">
       <div class="card-header pb-0">
-        <h4 class="text-center">Sua DRE</h4>
+        <h4 class="text-center"><?= $this->empresa->get()->nome ?> (DRE)</h4>
 
       </div>
       <div class="card-body px-0 pt-0 pb-2">
@@ -10,63 +10,51 @@
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Categoria</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Valor (R$)</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Categoria</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Valor (R$)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Saldo</td>
                 <td>
-                  <?= number_format($dre->getSaldo(), 2, ',', '.') ?>
+                  R$ <?= number_format($dre['saldo'], 2, ',', '.') ?>
                 </td>
               </tr>
               <tr>
                 <td>Lucro Líquido</td>
                 <td>
-                  <?= number_format($dre->getLucroLiquido(), 2, ',', '.') ?>
+                  R$ <?= number_format($dre['lucro_liquido'], 2, ',', '.') ?>
                 </td>
               </tr>
               <tr>
                 <td>Receitas</td>
                 <td>
-                  <?= number_format($dre->getReceitas(), 2, ',', '.') ?>
+                  R$ <?= number_format($dre['receita'], 2, ',', '.') ?>
                 </td>
               </tr>
               <tr>
                 <td>Despesas</td>
                 <td>
-                  <?= number_format($dre->getDespesas(), 2, ',', '.') ?>
+                  R$ <?= number_format($dre['despesa'], 2, ',', '.') ?>
                 </td>
               </tr>
               <tr>
-                <td>Receita Operacional</td>
+                <td>Margem de Lucro</td>
                 <td>
-                  <?= number_format($dre->getReceitaOperacional(), 2, ',', '.') ?>
+                  <?= number_format($dre['margem_lucro'], 2, ',', '.') ?> (%)
                 </td>
               </tr>
               <tr>
-                <td>Custos de Vendas</td>
+                <td>ROI</td>
                 <td>
-                  <?= number_format($dre->getCustosVendas(), 2, ',', '.') ?>
+                  <?= number_format($dre['roi'], 2, ',', '.') ?> (%)
                 </td>
               </tr>
               <tr>
-                <td>Margem Bruta</td>
+                <td>Investimento</td>
                 <td>
-                  <?= number_format($dre->getMargemBruta(), 2, ',', '.') ?>
-                </td>
-              </tr>
-              <tr>
-                <td>Despesas Operacionais</td>
-                <td>
-                  <?= number_format($dre->getDespesasOperacionais(), 2, ',', '.') ?>
-                </td>
-              </tr>
-              <tr>
-                <td>Lucro Operacional</td>
-                <td>
-                  <?= number_format($dre->getLucroOperacional(), 2, ',', '.') ?>
+                  R$ <?= number_format($dre['investimento'], 2, ',', '.') ?>
                 </td>
               </tr>
             </tbody>
